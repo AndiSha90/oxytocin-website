@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#C9184A">
+<title>Privacy Policy — Oxytocin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --coral: #C9184A;
+    --coral-dark: #A30E36;
+    --cream: #FBF6F2;
+    --cream-warm: #F5EBE0;
+    --ink: #1A0E10;
+    --ink-soft: #4A2D33;
+    --line: rgba(26, 14, 16, 0.12);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(251, 246, 242, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    color: var(--coral);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .nav-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--coral); }
+
+  .doc-header {
+    padding: 5rem 2.5rem 3rem;
+    text-align: center;
+    background: var(--cream-warm);
+    border-bottom: 1px solid var(--line);
+  }
+  .doc-header .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--coral);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--coral);
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .doc-header h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .doc-header h1 em {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 600;
+  }
+  .last-updated {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    margin-top: 1rem;
+  }
+
+  .doc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+    font-size: 1rem;
+  }
+
+  .doc-warning {
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border-left: 3px solid var(--coral);
+    border-radius: 4px;
+    margin-bottom: 3rem;
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+  }
+  .doc-warning strong { color: var(--ink); }
+
+  .doc h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.875rem;
+    letter-spacing: -0.02em;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .doc h2:first-of-type { margin-top: 0; }
+  .doc h2::before {
+    content: counter(section, decimal-leading-zero);
+    counter-increment: section;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--coral);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.1em;
+  }
+  .doc { counter-reset: section; }
+
+  .doc h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+
+  .doc p {
+    margin-bottom: 1.25rem;
+    color: var(--ink-soft);
+  }
+  .doc p:last-child { margin-bottom: 0; }
+  .doc strong { color: var(--ink); font-weight: 600; }
+
+  .doc ul {
+    margin: 0 0 1.5rem 1.5rem;
+    color: var(--ink-soft);
+  }
+  .doc li { margin-bottom: 0.5rem; }
+
+  .doc a { color: var(--coral); text-decoration: underline; text-underline-offset: 3px; }
+  .doc a:hover { color: var(--coral-dark); }
+
+  .toc {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 3rem;
+  }
+  .toc h3 {
+    margin: 0 0 1rem 0;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: tocitem;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .toc li {
+    counter-increment: tocitem;
+    padding: 0.4rem 0;
+    font-size: 0.9375rem;
+    break-inside: avoid;
+  }
+  .toc li::before {
+    content: counter(tocitem, decimal-leading-zero) ".";
+    color: var(--coral);
+    font-family: var(--serif);
+    font-style: italic;
+    margin-right: 0.6rem;
+  }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--coral); }
+
+  footer {
+    padding: 3rem 2.5rem;
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+  }
+  footer .logo { color: var(--coral); margin-bottom: 1rem; display: inline-block; }
+  footer p { font-size: 0.875rem; color: rgba(251, 246, 242, 0.6); margin-bottom: 0.5rem; }
+  footer a { color: var(--coral); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; font-size: 0.8125rem; }
+    .doc-header { padding: 3rem 1.5rem 2rem; }
+    .doc { padding: 3rem 1.5rem 4rem; }
+    .toc ol { columns: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Oxytocin</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<header class="doc-header">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <div class="last-updated">Last updated: May 6, 2026</div>
+</header>
+
+<main class="doc">
+
+<div class="doc-warning">
+  <strong>About this document:</strong> Oxytocin is currently in development and not yet publicly available. This Privacy Policy describes how we will handle personal data when the app launches. If you are reading this before launch, no personal data is being collected through the app yet. This document will continue to be updated as the product evolves.
+</div>
+
+<div class="toc">
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#s1">Who we are</a></li>
+    <li><a href="#s2">What this policy covers</a></li>
+    <li><a href="#s3">Data we collect</a></li>
+    <li><a href="#s4">How we use your data</a></li>
+    <li><a href="#s5">Legal bases (GDPR)</a></li>
+    <li><a href="#s6">Sharing your data</a></li>
+    <li><a href="#s7">International transfers</a></li>
+    <li><a href="#s8">How long we keep data</a></li>
+    <li><a href="#s9">Your rights</a></li>
+    <li><a href="#s10">Children</a></li>
+    <li><a href="#s11">Security</a></li>
+    <li><a href="#s12">Changes to this policy</a></li>
+    <li><a href="#s13">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">Who we are</h2>
+<p>
+  Oxytocin is operated by <strong>Andreas Ninevebri</strong>, based in <strong>Sweden</strong>, with the intent to incorporate as a Swedish Aktiebolag (AB) prior to public launch. Throughout this document, "Oxytocin", "we", "us", and "our" refer to this entity.
+</p>
+<p>
+  For privacy-related questions, you can reach us at <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a>.
+</p>
+
+<h2 id="s2">What this policy covers</h2>
+<p>
+  This policy describes the personal data we collect when you use the Oxytocin mobile app (the "Service"), why we collect it, how we use it, who we share it with, and what choices you have about it.
+</p>
+<p>
+  By creating an account or using the Service, you confirm that you have read this policy and understand how we handle your personal data.
+</p>
+
+<h2 id="s3">Data we collect</h2>
+
+<h3>Information you give us directly</h3>
+<p>When you create an account and use the Service, you provide us with:</p>
+<ul>
+  <li><strong>Account information:</strong> email address, password (stored hashed, never in plain text), date of birth (used to verify you are 18+).</li>
+  <li><strong>Profile information:</strong> name or display name, gender, sexual orientation, languages you speak, interests, fun-fact answers, photographs, and other details you choose to add.</li>
+  <li><strong>Communications:</strong> messages you send to other users, reports you submit about other users, and any communications you have with our support team.</li>
+  <li><strong>Subscription information:</strong> if you purchase a premium subscription, payment is processed by Apple (App Store) or Google (Play Store); we receive a transaction confirmation but never see your full payment details.</li>
+</ul>
+
+<h3>Information collected automatically</h3>
+<ul>
+  <li><strong>Device information:</strong> device type, operating system, app version, language, time zone.</li>
+  <li><strong>Usage information:</strong> features you use, swipes, matches, login times, crash reports.</li>
+  <li><strong>Location information:</strong> with your permission, your approximate location (city or region) is used to show you nearby matches. You can revoke this permission in your device settings at any time.</li>
+</ul>
+
+<h3>Information from third parties</h3>
+<ul>
+  <li><strong>Authentication providers:</strong> if you sign in using a third-party service (e.g., Apple Sign-In), we receive only the basic information you authorize that service to share.</li>
+</ul>
+
+<h2 id="s4">How we use your data</h2>
+<p>We use your personal data to:</p>
+<ul>
+  <li>Create and operate your account.</li>
+  <li>Show you potential matches based on your preferences and location.</li>
+  <li>Enable communication between you and other users.</li>
+  <li>Verify your age and identity to keep our community safe (18+ only).</li>
+  <li>Process subscription payments via app stores.</li>
+  <li>Detect, prevent, and respond to fraud, abuse, harassment, and policy violations.</li>
+  <li>Improve the Service through analytics on aggregated, non-identifiable usage patterns.</li>
+  <li>Communicate with you about your account, security, and important updates.</li>
+  <li>Comply with our legal obligations.</li>
+</ul>
+<p>
+  <strong>We do not sell your personal data to third parties.</strong> We do not use your photos, profile content, or messages to train generative AI models.
+</p>
+
+<h2 id="s5">Legal bases (GDPR)</h2>
+<p>
+  If you are in the European Economic Area (EEA), United Kingdom, or Switzerland, we rely on the following legal bases under the General Data Protection Regulation (GDPR):
+</p>
+<ul>
+  <li><strong>Performance of a contract:</strong> processing your account and profile data is necessary to provide the Service you signed up for.</li>
+  <li><strong>Consent:</strong> for optional features such as location-based matching and certain notifications. You can withdraw consent at any time.</li>
+  <li><strong>Legitimate interests:</strong> for keeping the platform safe, preventing fraud, and improving the Service. Where we rely on legitimate interests, we have weighed these against your rights.</li>
+  <li><strong>Legal obligation:</strong> when required to comply with applicable law (e.g., responding to lawful requests from authorities).</li>
+</ul>
+
+<h2 id="s6">Sharing your data</h2>
+<p>We share data only with:</p>
+<ul>
+  <li><strong>Other users:</strong> the profile information you choose to make visible (photos, bio, interests, etc.) is visible to other users, including those you match with.</li>
+  <li><strong>Service providers:</strong> companies that help us operate the Service:
+    <ul>
+      <li><strong>Supabase</strong> — database, authentication, and file storage.</li>
+      <li><strong>RevenueCat</strong> — subscription management.</li>
+      <li><strong>Apple and Google</strong> — payment processing for subscriptions.</li>
+      <li><strong>Expo</strong> — push notifications.</li>
+    </ul>
+    These providers are bound by data processing agreements limiting their use of your data to the services they provide to us.
+  </li>
+  <li><strong>Authorities:</strong> when required by law (court orders, regulatory requests, etc.) or when necessary to protect users from imminent harm.</li>
+  <li><strong>Successors:</strong> if Oxytocin is acquired, merged, or transfers operations to another entity, your data may transfer with the business. We will notify you in advance of any such transfer.</li>
+</ul>
+
+<h2 id="s7">International transfers</h2>
+<p>
+  Some of our service providers (notably Supabase and RevenueCat) operate servers outside Sweden, including in the United States. When data is transferred outside the European Economic Area, we ensure adequate protection through:
+</p>
+<ul>
+  <li>Standard Contractual Clauses approved by the European Commission, or</li>
+  <li>The provider's certification under recognized adequacy frameworks (such as the EU-US Data Privacy Framework), or</li>
+  <li>Other lawful safeguards required by GDPR.</li>
+</ul>
+
+<h2 id="s8">How long we keep data</h2>
+<ul>
+  <li><strong>Active accounts:</strong> we keep your data as long as your account exists.</li>
+  <li><strong>Deleted accounts:</strong> when you delete your account, we delete or anonymize your personal data within <strong>30 days</strong>, except where retention is required by law (e.g., transaction records for tax compliance) or necessary to resolve disputes, prevent abuse, or enforce our Terms.</li>
+  <li><strong>Reports and moderation records:</strong> may be retained for up to 12 months after account deletion to enable us to investigate harassment or repeated abuse.</li>
+  <li><strong>Server logs and security data:</strong> kept for up to 90 days.</li>
+</ul>
+
+<h2 id="s9">Your rights</h2>
+<p>Depending on where you live, you have the following rights regarding your personal data:</p>
+<ul>
+  <li><strong>Access:</strong> request a copy of the personal data we hold about you.</li>
+  <li><strong>Correction:</strong> ask us to correct inaccurate or incomplete data.</li>
+  <li><strong>Deletion:</strong> ask us to delete your data (you can also delete your account directly in the app).</li>
+  <li><strong>Restriction:</strong> ask us to limit how we use your data in certain circumstances.</li>
+  <li><strong>Portability:</strong> receive your data in a structured, machine-readable format.</li>
+  <li><strong>Objection:</strong> object to certain types of processing, including direct marketing.</li>
+  <li><strong>Withdraw consent:</strong> where we rely on your consent, you can withdraw it at any time.</li>
+</ul>
+<p>
+  To exercise any of these rights, contact us at <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a>. We will respond within 30 days.
+</p>
+<p>
+  If you are in the EEA and feel we have not adequately addressed your concerns, you have the right to lodge a complaint with your local data protection authority. In Sweden, that is the Integritetsskyddsmyndigheten (IMY).
+</p>
+
+<h2 id="s10">Children</h2>
+<p>
+  Oxytocin is intended <strong>only for adults aged 18 and older</strong>. We do not knowingly collect personal data from anyone under 18. If you believe a minor has created an account, please contact us at <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a> and we will investigate and delete the account.
+</p>
+
+<h2 id="s11">Security</h2>
+<p>We take reasonable technical and organizational measures to protect your personal data, including:</p>
+<ul>
+  <li>Encryption of data in transit (TLS/HTTPS).</li>
+  <li>Encryption of sensitive data at rest.</li>
+  <li>Hashed password storage (we never see your password).</li>
+  <li>Access controls limiting who can view personal data.</li>
+  <li>Regular review of our security practices.</li>
+</ul>
+<p>
+  No system is perfectly secure. While we work hard to protect your data, we cannot guarantee absolute security. If we ever discover a data breach affecting your personal data, we will notify you and the relevant authorities as required by law.
+</p>
+
+<h2 id="s12">Changes to this policy</h2>
+<p>
+  We may update this Privacy Policy as the Service evolves or as legal requirements change. When we make material changes, we will notify you through the app or by email and update the "Last updated" date at the top of this document. Continued use of the Service after changes take effect constitutes acceptance of the updated policy.
+</p>
+
+<h2 id="s13">Contact</h2>
+<p>
+  If you have questions about this Privacy Policy or how we handle your personal data:
+</p>
+<p>
+  <strong>Andreas Ninevebri</strong><br>
+  Aktiebolag (in formation)<br>
+  Sweden<br>
+  Email: <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a>
+</p>
+
+</main>
+
+<footer>
+  <a href="index.html" class="logo">Oxytocin</a>
+  <p>© 2026 Andreas Ninevebri. All rights reserved.</p>
+  <p><a href="terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>
