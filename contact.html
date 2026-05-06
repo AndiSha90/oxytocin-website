@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Oxytocin</title>
+<meta name="description" content="Get in touch with the Oxytocin team. We read every message." />
+<meta name="theme-color" content="#C9184A" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --coral: #C9184A;
+    --coral-soft: #E76F8B;
+    --coral-deep: #8B0F31;
+    --paper: #F5EFE8;
+    --paper-warm: #EEE5DB;
+    --ink: #1A1A1A;
+    --ink-soft: #3A3A3A;
+    --ink-mute: #6B6259;
+    --line: rgba(26,26,26,0.08);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ================== NAV ================== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 48px;
+    background: rgba(245, 239, 232, 0.78);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: var(--coral);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    animation: heartbeat 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a {
+    position: relative;
+    color: var(--ink-soft);
+    transition: color 0.3s ease;
+    padding: 4px 0;
+  }
+
+  .nav-links a:hover { color: var(--coral); }
+  .nav-links a.active { color: var(--coral); }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: var(--coral);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after { width: 100%; }
+
+  @media (max-width: 768px) {
+    .nav {
+      padding: 14px 22px 12px;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-logo {
+      font-size: 24px;
+      align-self: flex-start;
+    }
+    .nav-links {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+    .nav-links a { padding: 2px 0; }
+  }
+
+  /* ================== HEADER ================== */
+  .page-header {
+    padding: 180px 48px 80px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid var(--coral);
+    border-radius: 999px;
+    color: var(--coral);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .page-eyebrow::before {
+    content: '●';
+    margin-right: 8px;
+    font-size: 8px;
+  }
+
+  .page-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .page-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--coral-deep);
+  }
+
+  .page-sub {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 140px 22px 50px; }
+    .page-title { font-size: clamp(36px, 9vw, 56px); }
+    .page-sub { font-size: 16px; }
+  }
+
+  /* ================== FORM ================== */
+  .contact-section {
+    padding: 40px 48px 100px;
+  }
+
+  .contact-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .form-card {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 44px;
+    backdrop-filter: blur(8px);
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .form-row label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .form-row label .opt {
+    color: var(--ink-mute);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 6px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: var(--ink-mute); }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--coral);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(201, 24, 74, 0.08);
+  }
+
+  .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23C9184A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+
+  .form-textarea {
+    min-height: 160px;
+    resize: vertical;
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+
+  .form-row-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+
+  .form-row-double .form-row { margin-bottom: 0; }
+
+  .form-button {
+    width: 100%;
+    padding: 18px 28px;
+    border: none;
+    border-radius: 12px;
+    background: var(--coral);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 24px -8px rgba(201, 24, 74, 0.5);
+    margin-top: 8px;
+  }
+
+  .form-button:hover:not(:disabled) {
+    background: var(--coral-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -8px rgba(201, 24, 74, 0.6);
+  }
+
+  .form-button:active:not(:disabled) { transform: translateY(0); }
+  .form-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-message {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+  }
+
+  .form-message.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .form-message.error {
+    background: rgba(180, 30, 30, 0.08);
+    border: 1px solid rgba(180, 30, 30, 0.25);
+    color: #8B1F1F;
+  }
+
+  /* Success state */
+  .form-success {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .form-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(201, 24, 74, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: var(--coral);
+    font-size: 32px;
+  }
+
+  .form-success h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--coral-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .form-success p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0 auto 24px;
+  }
+
+  .form-success a {
+    color: var(--coral);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  /* Side info column */
+  .info-card {
+    padding: 32px;
+    background: var(--paper-warm);
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+
+  .info-card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .info-card p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .info-card p:last-child { margin-bottom: 0; }
+
+  .info-card a.email-link {
+    display: inline-block;
+    color: var(--coral);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 24, 74, 0.3);
+    transition: border-color 0.3s;
+  }
+
+  .info-card a.email-link:hover { border-color: var(--coral); }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-section { padding: 30px 22px 80px; }
+    .form-card { padding: 30px 24px; }
+    .form-row-double { grid-template-columns: 1fr; gap: 0; }
+    .form-row-double .form-row { margin-bottom: 22px; }
+    .form-success h3 { font-size: 26px; }
+  }
+
+  /* ================== FOOTER ================== */
+  .footer {
+    padding: 80px 48px 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper-warm);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--coral);
+    margin-bottom: 12px;
+  }
+
+  .footer-brand p {
+    color: var(--ink-mute);
+    font-size: 15px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .footer-col h5 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: var(--ink-soft);
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--coral); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    color: var(--ink-mute);
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .footer { padding: 60px 22px 30px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  /* ================== ANIMATIONS ================== */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Oxytocin</a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#philosophy">Philosophy</a>
+    <a href="index.html#waitlist">Waitlist</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-eyebrow">Get in Touch</div>
+  <h1 class="page-title">Let's <em>talk.</em></h1>
+  <p class="page-sub">Questions, press inquiries, partnerships, or feedback — we read every message and reply within a few business days.</p>
+</header>
+
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="form-card">
+      <div id="contactFormBlock">
+        <form id="contactForm" novalidate>
+          <div class="form-row-double">
+            <div class="form-row">
+              <label for="cName">Name</label>
+              <input type="text" id="cName" name="name" class="form-input" placeholder="Your full name" required autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="cEmail">Email</label>
+              <input type="email" id="cEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="cSubject">Subject</label>
+            <input type="text" id="cSubject" name="subject" class="form-input" placeholder="What's this about?" required maxlength="120">
+          </div>
+
+          <div class="form-row">
+            <label for="cCategory">Category</label>
+            <select id="cCategory" name="category" class="form-select" required>
+              <option value="" disabled selected>Choose one</option>
+              <option value="general">General inquiry</option>
+              <option value="account">Account help</option>
+              <option value="privacy">Privacy / data request</option>
+              <option value="press">Press / media</option>
+              <option value="partnership">Partnership</option>
+              <option value="bug">Bug report</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" class="form-textarea" placeholder="Tell us what's on your mind..." required maxlength="3000"></textarea>
+          </div>
+
+          <button type="submit" class="form-button" id="cButton">Send message</button>
+        </form>
+        <div class="form-message" id="cMessageBox"></div>
+      </div>
+
+      <div class="form-success" id="contactSuccess" style="display: none;">
+        <div class="form-success-icon">✓</div>
+        <h3>Message received.</h3>
+        <p>Thank you for reaching out. We'll get back to you within a few business days. If your matter is urgent, you can also email <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a> directly.</p>
+      </div>
+    </div>
+
+    <!-- INFO COLUMN -->
+    <aside>
+      <div class="info-card">
+        <h3>Prefer email?</h3>
+        <p>You can reach us directly at:</p>
+        <a href="mailto:support@oxytocinapp.com" class="email-link">support@oxytocinapp.com</a>
+      </div>
+
+      <div class="info-card">
+        <h3>Response time</h3>
+        <p>We aim to reply to every message within 2–3 business days. For privacy or data requests, we may take a bit longer to respond properly.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>About this team</h3>
+        <p>Oxytocin is being built by a small, independent team — based in Sweden, working in the open. Your message goes directly to us, not a support queue.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">Oxytocin</div>
+      <p>A dating app in development. Built carefully, for connection that lasts.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Andreas Ninevebri. All rights reserved.</span>
+    <span>Made with care.</span>
+  </div>
+</footer>
+
+<script>
+  const SUPABASE_URL = 'https://teemszyzjbuwzpcqtmzs.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlZW1zenl6amJ1d3pwY3F0bXpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3MDk5NjksImV4cCI6MjA4OTI4NTk2OX0.3Cb7_LDS0rvminN1P8Y2NPH1YA9ZTH6E3gV5CfgJ-zk';
+
+  const form = document.getElementById('contactForm');
+  const formBlock = document.getElementById('contactFormBlock');
+  const successBlock = document.getElementById('contactSuccess');
+  const cButton = document.getElementById('cButton');
+  const messageBox = document.getElementById('cMessageBox');
+
+  function showMessage(text, type) {
+    messageBox.textContent = text;
+    messageBox.className = 'form-message show ' + type;
+  }
+
+  function hideMessage() {
+    messageBox.classList.remove('show');
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideMessage();
+
+    const name = document.getElementById('cName').value.trim();
+    const email = document.getElementById('cEmail').value.trim().toLowerCase();
+    const subject = document.getElementById('cSubject').value.trim();
+    const category = document.getElementById('cCategory').value;
+    const message = document.getElementById('cMessage').value.trim();
+
+    if (!name) return showMessage('Please enter your name.', 'error');
+    if (!isValidEmail(email)) return showMessage('Please enter a valid email address.', 'error');
+    if (!subject) return showMessage('Please enter a subject.', 'error');
+    if (!category) return showMessage('Please choose a category.', 'error');
+    if (message.length < 10) return showMessage('Please write a message of at least 10 characters.', 'error');
+
+    cButton.disabled = true;
+    cButton.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          category: category,
+          message: message
+        })
+      });
+
+      if (response.ok) {
+        formBlock.style.display = 'none';
+        successBlock.style.display = 'block';
+        successBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        showMessage('Something went wrong. Please try again, or email us directly at support@oxytocinapp.com.', 'error');
+        cButton.disabled = false;
+        cButton.textContent = 'Send message';
+      }
+    } catch (err) {
+      showMessage('Network error. Please check your connection and try again.', 'error');
+      cButton.disabled = false;
+      cButton.textContent = 'Send message';
+    }
+  });
+</script>
+
+</body>
+</html>
