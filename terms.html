@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Oxytocin</title>
+<meta name="theme-color" content="#C9184A" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --coral: #C9184A;
+    --coral-soft: #E76F8B;
+    --coral-deep: #8B0F31;
+    --paper: #F5EFE8;
+    --paper-warm: #EEE5DB;
+    --ink: #1A1A1A;
+    --ink-soft: #3A3A3A;
+    --ink-mute: #6B6259;
+    --line: rgba(26,26,26,0.08);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ================== NAV ================== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 48px;
+    background: rgba(245, 239, 232, 0.78);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: var(--coral);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    animation: heartbeat 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a {
+    position: relative;
+    color: var(--ink-soft);
+    transition: color 0.3s ease;
+    padding: 4px 0;
+  }
+
+  .nav-links a:hover { color: var(--coral); }
+  .nav-links a.active { color: var(--coral); }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: var(--coral);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after { width: 100%; }
+
+  @media (max-width: 768px) {
+    html { scroll-padding-top: 130px; }
+    .nav {
+      padding: 14px 22px 12px;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-logo {
+      font-size: 24px;
+      align-self: flex-start;
+    }
+    .nav-links {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+    .nav-links a { padding: 2px 0; }
+  }
+
+  /* ================== HEADER ================== */
+  .legal-header {
+    padding: 180px 48px 80px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .legal-eyebrow {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid var(--coral);
+    border-radius: 999px;
+    color: var(--coral);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .legal-eyebrow::before {
+    content: '●';
+    margin-right: 8px;
+    font-size: 8px;
+  }
+
+  .legal-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .legal-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--coral-deep);
+  }
+
+  .legal-updated {
+    font-size: 16px;
+    color: var(--ink-mute);
+  }
+
+  @media (max-width: 768px) {
+    .legal-header { padding: 140px 22px 50px; }
+    .legal-title { font-size: clamp(36px, 9vw, 56px); }
+  }
+
+  /* ================== CONTENT ================== */
+  .legal-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 48px 100px;
+  }
+
+  .legal-intro {
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 3px solid var(--coral);
+    border-radius: 4px;
+    padding: 24px 32px;
+    margin-bottom: 60px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .legal-intro strong { color: var(--ink); font-weight: 600; }
+
+  .legal-toc {
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 60px;
+  }
+
+  .legal-toc h3 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .legal-toc ol {
+    columns: 2;
+    column-gap: 36px;
+    list-style: none;
+    counter-reset: toc;
+  }
+
+  .legal-toc li {
+    counter-increment: toc;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    padding-left: 38px;
+    position: relative;
+    font-size: 15px;
+  }
+
+  .legal-toc li::before {
+    content: counter(toc, decimal-leading-zero) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--coral);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .legal-toc a {
+    color: var(--ink-soft);
+    transition: color 0.3s;
+  }
+
+  .legal-toc a:hover { color: var(--coral); }
+
+  @media (max-width: 700px) {
+    .legal-toc ol { columns: 1; }
+  }
+
+  .legal-body h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin-top: 64px;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+
+  .legal-body h2:first-of-type { border-top: none; padding-top: 0; }
+
+  .legal-body h2::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--coral);
+    margin-bottom: 14px;
+  }
+
+  .legal-body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .legal-body p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  .legal-body strong { color: var(--ink); font-weight: 600; }
+
+  .legal-body ul {
+    margin: 18px 0 24px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .legal-body ul li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .legal-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+  }
+
+  .legal-body a {
+    color: var(--coral);
+    text-decoration: underline;
+    text-decoration-color: rgba(201, 24, 74, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.3s;
+  }
+
+  .legal-body a:hover { text-decoration-color: var(--coral); }
+
+  @media (max-width: 768px) {
+    .legal-body { padding: 0 22px 80px; }
+    .legal-body h2 { font-size: 24px; margin-top: 48px; }
+    .legal-toc { padding: 24px 22px; }
+  }
+
+  /* ================== FOOTER ================== */
+  .footer {
+    padding: 80px 48px 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper-warm);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--coral);
+    margin-bottom: 12px;
+  }
+
+  .footer-brand p {
+    color: var(--ink-mute);
+    font-size: 15px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .footer-col h5 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: var(--ink-soft);
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--coral); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    color: var(--ink-mute);
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .footer { padding: 60px 22px 30px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Oxytocin</a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#philosophy">Philosophy</a>
+    <a href="index.html#waitlist">Waitlist</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html" class="active">Terms</a>
+  </div>
+</nav>
+
+<header class="legal-header">
+  <div class="legal-eyebrow">Legal</div>
+  <h1 class="legal-title">Terms of <em>Service</em></h1>
+  <p class="legal-updated">Last updated: May 6, 2026</p>
+</header>
+
+<main class="legal-body">
+
+  <div class="legal-intro">
+    <strong>About this document:</strong> Oxytocin is currently in development. These Terms describe the rules that will apply when the app launches. Please read them carefully — by creating an account, you will agree to be bound by them.
+  </div>
+
+  <div class="legal-toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#s1">Acceptance of these terms</a></li>
+      <li><a href="#s2">Eligibility (18+)</a></li>
+      <li><a href="#s3">Your account</a></li>
+      <li><a href="#s4">Subscriptions and payments</a></li>
+      <li><a href="#s5">User conduct</a></li>
+      <li><a href="#s6">User content</a></li>
+      <li><a href="#s7">Reporting and moderation</a></li>
+      <li><a href="#s8">Termination</a></li>
+      <li><a href="#s9">Intellectual property</a></li>
+      <li><a href="#s10">Disclaimers</a></li>
+      <li><a href="#s11">Limitation of liability</a></li>
+      <li><a href="#s12">Indemnification</a></li>
+      <li><a href="#s13">Governing law</a></li>
+      <li><a href="#s14">Changes to these terms</a></li>
+      <li><a href="#s15">Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1">Acceptance of these terms</h2>
+  <p>These Terms of Service ("Terms") form a legally binding agreement between you and <strong>Andreas Ninevebri</strong>, based in Sweden, with the intent to incorporate as a Swedish Aktiebolag (AB) prior to public launch ("Oxytocin", "we", "us"). They govern your access to and use of the Oxytocin mobile application and any related services (the "Service").</p>
+  <p>By creating an account or using the Service, you confirm that you have read, understood, and agree to these Terms and our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use the Service.</p>
+
+  <h2 id="s2">Eligibility (18+)</h2>
+  <p>Oxytocin is a dating service. <strong>You must be at least 18 years old to use it.</strong> By creating an account, you represent and warrant that:</p>
+  <ul>
+    <li>You are at least 18 years of age.</li>
+    <li>You have the legal capacity to enter into a binding contract.</li>
+    <li>You are not legally prohibited from using dating services in your jurisdiction.</li>
+    <li>You are not a registered sex offender, have not been convicted of a violent crime, and are not subject to any court order preventing contact with others.</li>
+  </ul>
+  <p>We reserve the right to require verification of your age and identity at any time, and to refuse, suspend, or terminate accounts that we believe may not meet these requirements.</p>
+
+  <h2 id="s3">Your account</h2>
+
+  <h3>Creation</h3>
+  <p>You agree to provide accurate, current, and complete information when creating your account, and to keep that information up to date. You may only create one account. You are responsible for everything that happens through your account.</p>
+
+  <h3>Security</h3>
+  <p>Keep your password confidential. Do not share your account with others. Notify us immediately at <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a> if you suspect unauthorized access.</p>
+
+  <h3>Deletion</h3>
+  <p>You may delete your account at any time from within the app. Deletion is permanent, subject to the retention rules described in our <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2 id="s4">Subscriptions and payments</h2>
+  <p>Oxytocin offers an optional premium subscription with additional features. Subscriptions are sold and managed through the <strong>Apple App Store</strong> or <strong>Google Play Store</strong>, in accordance with their respective terms.</p>
+  <ul>
+    <li><strong>Auto-renewal:</strong> subscriptions automatically renew unless you cancel them in your App Store or Play Store account at least 24 hours before the end of the current period.</li>
+    <li><strong>Pricing:</strong> prices are displayed in the app at the time of purchase. We may change prices for future renewal periods, with reasonable notice.</li>
+    <li><strong>Refunds:</strong> refund requests are handled by Apple or Google according to their policies, not by Oxytocin directly. Where required by law (such as the EU 14-day right of withdrawal for digital content), we will honor your statutory rights.</li>
+    <li><strong>Cancellation:</strong> you can cancel your subscription at any time from your device settings; you will retain premium access until the end of the current paid period.</li>
+  </ul>
+
+  <h2 id="s5">User conduct</h2>
+  <p>Oxytocin exists to help adults make genuine connections. To keep the community safe, you agree NOT to:</p>
+  <ul>
+    <li>Impersonate any other person or entity, or misrepresent your identity, age, or affiliation.</li>
+    <li>Use the Service for commercial purposes — no advertising, soliciting, escort services, recruiting, or selling anything.</li>
+    <li>Harass, threaten, intimidate, stalk, or abuse any other user.</li>
+    <li>Post or share content that is illegal, sexually explicit, hateful, violent, defamatory, harassing, or that promotes discrimination based on race, ethnicity, religion, gender, sexual orientation, disability, or any other protected characteristic.</li>
+    <li>Share nude images, child sexual abuse material, or content involving minors in any sexual or suggestive context. Such content is illegal and will be reported to authorities.</li>
+    <li>Solicit money, financial details, or anything of value from other users — including romance scams or "advance-fee" requests.</li>
+    <li>Share another user's personal information without consent ("doxxing").</li>
+    <li>Create multiple accounts, or create an account if we have previously banned you.</li>
+    <li>Use bots, scripts, scrapers, or any automated means to access or use the Service.</li>
+    <li>Attempt to circumvent security measures, reverse engineer the app, or interfere with its operation.</li>
+    <li>Use the Service for any illegal purpose or in violation of any applicable law.</li>
+  </ul>
+
+  <h2 id="s6">User content</h2>
+
+  <h3>Your ownership</h3>
+  <p>You retain ownership of the photographs, text, and other content you upload to the Service ("User Content").</p>
+
+  <h3>License to us</h3>
+  <p>By uploading User Content, you grant us a worldwide, non-exclusive, royalty-free license to host, store, reproduce, display, and distribute it solely for the purpose of operating and providing the Service to you and other users. This license ends when you delete the content or your account, except for residual backup copies retained briefly for technical reasons.</p>
+  <p>We do <strong>not</strong> use your User Content to train generative AI models, sell it to third parties, or use it for advertising outside the Service.</p>
+
+  <h3>Your responsibility</h3>
+  <p>You represent that:</p>
+  <ul>
+    <li>You have all rights necessary to upload and license the content.</li>
+    <li>The content does not violate any third-party rights, including copyright, trademark, privacy, or publicity rights.</li>
+    <li>The photographs you upload are of yourself, taken with consent, and accurately represent your current appearance.</li>
+  </ul>
+
+  <h2 id="s7">Reporting and moderation</h2>
+  <p>If another user violates these Terms, you can report them through the report feature in the app or via our <a href="contact.html">contact page</a>. We review reports promptly and may take actions including warnings, content removal, temporary suspension, or permanent ban.</p>
+  <p>We reserve the right (but are not obligated) to monitor, review, and remove any User Content that we believe violates these Terms or is otherwise harmful, at our discretion and without prior notice.</p>
+
+  <h2 id="s8">Termination</h2>
+  <p>We may suspend or terminate your access to the Service at any time, without prior notice, if we believe you have violated these Terms, posed a risk to other users, or for any other lawful reason. We may also terminate accounts that have been inactive for an extended period.</p>
+  <p>You may stop using the Service and delete your account at any time. Termination does not entitle you to a refund of subscription fees already paid, except where required by law.</p>
+
+  <h2 id="s9">Intellectual property</h2>
+  <p>The Oxytocin name, logo, app design, software, and all related intellectual property are owned by us or our licensors. You receive a limited, personal, non-transferable, revocable license to use the app for its intended purpose. You may not copy, modify, distribute, sell, or create derivative works of the Service without our written permission.</p>
+
+  <h2 id="s10">Disclaimers</h2>
+  <p><strong>The Service is provided "as is" and "as available," without warranties of any kind, express or implied,</strong> to the maximum extent permitted by law. We do not warrant that the Service will be uninterrupted, error-free, or that it will meet your expectations.</p>
+  <p>Oxytocin is a platform that helps users connect; <strong>we do not vet, background-check, or verify the identity of all users</strong>. You are solely responsible for the people you choose to interact with. <strong>Always exercise caution.</strong> Meet in public places, tell a friend where you're going, and never send money to someone you have not met in person.</p>
+  <p>We are not responsible for the conduct of any user, online or offline, or for any disputes, injuries, losses, or damages that arise from interactions between users.</p>
+
+  <h2 id="s11">Limitation of liability</h2>
+  <p>To the fullest extent permitted by law, Oxytocin (including Andreas Ninevebri personally) will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, or use, arising out of or related to your use of the Service.</p>
+  <p>Our total cumulative liability for any claim arising from or related to the Service will not exceed the greater of (a) the amount you paid us for the Service in the 12 months preceding the claim, or (b) €100.</p>
+  <p>Some jurisdictions do not allow certain limitations of liability. If you live in such a jurisdiction, the limitations above apply only to the extent permitted by your local law, and nothing in these Terms limits liability for fraud, gross negligence, or other liabilities that cannot be lawfully limited.</p>
+
+  <h2 id="s12">Indemnification</h2>
+  <p>You agree to defend, indemnify, and hold harmless Oxytocin and Andreas Ninevebri from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from your violation of these Terms, your User Content, or your interactions with other users.</p>
+
+  <h2 id="s13">Governing law</h2>
+  <p>These Terms are governed by the laws of <strong>Sweden</strong>, without regard to conflict of laws principles. Any dispute arising out of or related to these Terms or the Service shall be brought exclusively in the courts of Sweden, except that, if you are a consumer, you may bring claims in the courts of your country of residence as required by mandatory consumer protection law.</p>
+  <p>Nothing in these Terms affects your statutory rights as a consumer that cannot be waived under applicable law.</p>
+
+  <h2 id="s14">Changes to these terms</h2>
+  <p>We may update these Terms from time to time. When we make material changes, we will notify you through the app or by email at least 30 days before they take effect, and update the "Last updated" date at the top. If you do not agree to the changes, you may stop using the Service and delete your account. Continued use after the effective date constitutes acceptance.</p>
+
+  <h2 id="s15">Contact</h2>
+  <p>Questions about these Terms? Reach out:</p>
+  <p>
+    <strong>Andreas Ninevebri</strong><br>
+    Aktiebolag (in formation)<br>
+    Sweden<br>
+    Email: <a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a><br>
+    Or via our <a href="contact.html">contact page</a>.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">Oxytocin</div>
+      <p>A dating app in development. Built carefully, for connection that lasts.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="mailto:support@oxytocinapp.com">support@oxytocinapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Andreas Ninevebri. All rights reserved.</span>
+    <span>Made with care.</span>
+  </div>
+</footer>
+
+</body>
+</html>
